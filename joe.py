@@ -7,5 +7,5 @@ class Joe:
         self.fire = False
         self.flying = False
 
-    def attaque():
+    def attaque(self):
         print("attaque")
