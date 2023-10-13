@@ -5,3 +5,7 @@ class Bob:
         self.speed = 2
         self.fire = True
         self.flying = False
+    
+    def attaque():
+        print("attaque")
+    
