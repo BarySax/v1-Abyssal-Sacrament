@@ -1,12 +1,18 @@
-from des import Des
+from dice import Dice
+from player import Player
 from enemy import Enemy
 
 #initialization des classe
-des = Des()
 enemy = Enemy()
+
+dice = Dice()
+player = Player()
+dice.lancer(2, 6)
 
 enemy.chose()
 
 des.lancer(2, 6)
+
+
 
 
