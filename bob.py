@@ -6,6 +6,6 @@ class Bob:
         self.fire = True
         self.flying = False
     
-    def attaque():
+    def attaque(self):
         print("attaque")
     
