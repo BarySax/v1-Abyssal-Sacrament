@@ -37,3 +37,27 @@ class Player:
         self.stat_strenght += add_strenght
         print("Vous avez:\n" + str(self.stat_int) + " point d'intelligence\n" + str(self.stat_strenght) + " point de force\n" + str(self.stat_hp) + " point de vie\n" + str(self.stat_speed) + " de vitesse de deplacement")
         print("Etant donne que vous etes un " + str(self.p_class) + " vous avez:\n" + str(self.inventory_weapon) + "\n" + str(self.inventory_armor))
+        def use_inventory(self):
+          while True:
+            choix = int(input("Que voulez vous faire:\n1-Changer d'armure\n2-Changer d'arme\n3-Quitter\n\nReponse: "))
+            if choix == 1:
+              print("Vous avez:\n" + str(self.inventory_armor))
+              choix = int(input("Quelle armure voulez vous prendre?\n\nReponse: "))
+              choix -= 1
+              if choix < 0:
+                choix = 0
+              use_armor = self.inventory_armor[choix]
+              print(use_armor)
+            elif choix == 2:
+              print("Vous avez:\n" + str(self.inventory_weapon))
+              choix = int(input("Quelle arme voulez vous prendre?\n\nReponse: "))
+              choix -= 1
+              if choix < 0:
+                choix = 0
+              use_weapon = self.inventory_weapon[choix]
+              print(use_weapon)
+            elif choix == 3:
+              break
+            else:
+              print("Ce choix n'est pas disponible")
+        use_inventory(self)
