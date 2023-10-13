@@ -12,7 +12,3 @@ dice.lancer(2, 6)
 enemy.chose()
 
 des.lancer(2, 6)
-
-
-
-
