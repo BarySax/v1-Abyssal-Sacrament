@@ -1,5 +1,6 @@
-from des import Des
+from dice import Dice
+from player import Player
 
-des = Des()
-
-des.lancer(2, 6)
+dice = Dice()
+player = Player()
+dice.lancer(2, 6)
