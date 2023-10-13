@@ -6,3 +6,6 @@ class Joe:
         self.speed = 4
         self.fire = False
         self.flying = False
+
+    def attaque():
+        print("attaque")
