@@ -33,8 +33,10 @@ class Player:
         self.stat_hp = 120
       add_int = dice.lancer(1,10)
       add_strenght = dice.lancer(1,10)
+      add_hp = dice.lancer(1,20)
       self.stat_int += add_int
       self.stat_strenght += add_strenght
+      self.stat_hp += add_hp
       print("Vous avez:\n" + str(self.stat_int) + " point d'intelligence\n" + str(self.stat_strenght) + " point de force\n" + str(self.stat_hp) + " point de vie\n" + str(self.stat_speed) + " de vitesse de deplacement")
       print("Etant donne que vous etes un " + str(self.p_class) + " vous avez:\n" + str(self.inventory_weapon) + "\n" + str(self.inventory_armor))
       def use_inventory(self):
