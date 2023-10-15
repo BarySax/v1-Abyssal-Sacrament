@@ -1,9 +1,10 @@
 from dice import Dice
+from weapon import Weapon
 dice = Dice()
 class Player:
   def __init__(self):
     self.inventory = []
-    self.inventory_weapon = []
+    self.inventory_weapon = ["Rien"]
     self.inventory_armor = []
     self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))
     self.race = int(input("A quel peuple appartenez-vous:\n1-Humain\n2-Elfe\n3-Nain\n\nReponse: "))
@@ -11,11 +12,11 @@ class Player:
     print(self.p_class)
     if self.p_class == 1:
       self.p_class = "Chevalier"
-      self.inventory_weapon.append("Epee")
+      self.inventory_weapon.append("Épée")
       self.inventory_armor.append("Armure de fer")
     else:
       self.p_class = "Sorcier"
-      self.inventory_weapon.append("Baton de sorcier")
+      self.inventory_weapon.append("Bâton de sorcier")
       self.inventory_armor.append("Robe de sorcier")
       
     if self.race == 1:
@@ -42,6 +43,7 @@ class Player:
     self.stat_int += add_int
     self.stat_strenght += add_strenght
     self.stat_hp += add_hp
+    Weapon("str",1,0,0)
     print("Vous avez:\n" + str(self.stat_int) + " point d'intelligence\n" + 
       str(self.stat_strenght) + " point de force\n" + 
       str(self.stat_hp) + " point de vie\n" + 
@@ -63,8 +65,18 @@ class Player:
           choix -= 1
           if choix < 0:
             choix = 0
-          use_weapon = self.inventory_weapon[choix]
-          print(use_weapon)
+          self.use_weapon = self.inventory_weapon[choix]
+          if self.use_weapon == "Rien":
+            Weapon("str",1,0,0)
+            self.weapon = Weapon("str",1,0,0)
+          elif self.use_weapon == "Épée":
+            Weapon("str",5,0,self.stat_strenght)
+            self.weapon = Weapon("str",5,0,self.stat_strenght)
+          elif self.use_weapon == "Bâton de sorcier":
+            Weapon("int",0,5,0)
+            self.weapon = Weapon("int",0,5,0)
+          print("Vous utilisez:\n" + str(self.use_weapon)
+            + "\nVotre arme fais: " + str(self.weapon.damage) + " points de dégâts")
         elif choix == 3:
           break
         else:
