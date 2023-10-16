@@ -1,11 +1,12 @@
 from dice import Dice
 from weapon import Weapon
+from armor import Armor
 dice = Dice()
 class Player:
   def __init__(self):
     self.inventory = []
     self.inventory_weapon = ["Rien"]
-    self.inventory_armor = []
+    self.inventory_armor = ["Rien"]
     self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))
     self.race = int(input("A quel peuple appartenez-vous:\n1-Humain\n2-Elfe\n3-Nain\n\nReponse: "))
     self.p_class = int(input("Quel classe voulez etre:\n1-Chevalier\n2-Sorcier\n\nReponse: "))
@@ -43,7 +44,9 @@ class Player:
     self.stat_int += add_int
     self.stat_strenght += add_strenght
     self.stat_hp += add_hp
+    self.stat_speed += dice.lancer(1,10)
     Weapon("str",1,0,0)
+    Armor(0,0,0)
     print("Vous avez:\n" + str(self.stat_int) + " point d'intelligence\n" + 
       str(self.stat_strenght) + " point de force\n" + 
       str(self.stat_hp) + " point de vie\n" + 
@@ -57,8 +60,19 @@ class Player:
           choix -= 1
           if choix < 0:
             choix = 0
-          use_armor = self.inventory_armor[choix]
-          print(use_armor)
+          self.use_armor = self.inventory_armor[choix]
+          if self.use_armor == "Rien":
+            Armor(0,0,0)
+            self.armor = Armor(0,0,0)
+          elif self.use_armor == "Armure de fer":
+            Armor(10,0,5)
+            self.armor = Armor(10,0,5)
+          elif self.use_armor == "Robe de sorcier":
+            Armor(2,10,0)
+            self.armor = Armor(2,10,0)
+          print("Vous utilisez:\n" + str(self.use_armor)
+            + "\nVotre armure a: " +
+                str(self.armor.str_protection) + " de protection physique, " + str(self.armor.int_protection) + " de protection magique et " + str(self.armor.weight) + " de poids")
         elif choix == 2:
           print("Vous avez:\n" + str(self.inventory_weapon))
           choix = int(input("Quelle arme voulez vous prendre?\n\nReponse: "))
