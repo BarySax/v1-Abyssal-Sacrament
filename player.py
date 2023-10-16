@@ -3,6 +3,8 @@ from weapon import Weapon
 from armor import Armor
 dice = Dice()
 class Player:
+
+
   def __init__(self):
     self.inventory = []
     self.inventory_weapon = ["Rien"]

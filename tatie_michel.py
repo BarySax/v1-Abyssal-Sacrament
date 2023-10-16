@@ -5,3 +5,6 @@ class Tatie_michel:
         self.speed = 4
         self.fire = False
         self.flying = True
+    
+    def attaque(self):
+        print("attaque")
