@@ -9,6 +9,6 @@ dice = Dice()
 player = Player()
 dice.lancer(2, 6)
 
-enemy.chose()
+enemy.choose()
 
-des.lancer(2, 6)
+dice.lancer(2, 6)
