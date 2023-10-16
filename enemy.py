@@ -13,16 +13,18 @@ class Enemy:
         if self.name == "joe":
             self.joe = Joe()
             print("penis")
-            self.joe.attaque()
+            
 
         if self.name == "bob":
             self.bob = Bob()
             print("penis")
-            self.bob.attaque()
 
         if self.name == "tatie-michel":
             self.tatie_michel = Tatie_michel()
             print("penis")
-            self.tati_michel.attaque()
+
+    def attaque(self, hp):
+        self.player_hp = hp
+        self.joe.attaque()
         
-        
+        return self.player_hp

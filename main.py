@@ -9,6 +9,7 @@ dice = Dice()
 player = Player()
 dice.lancer(2, 6)
 
-enemy.chose()
+enemy.choose(player.stat_hp)
+player.stat_hp = 
 
-des.lancer(2, 6)
+dice.lancer(2, 6)

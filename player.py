@@ -2,6 +2,9 @@ from dice import Dice
 dice = Dice()
 class Player:
     def __init__(self):
+        self.stat_hp = 100
+
+    def intro(self):
         self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))
         self.race = int(input("A quel peuple appartenez-vous:\n1-Humain\n2-Elfe\n3-Nain\n\nReponse: "))
         self.p_class = int(input("Quel classe voulez etre:\n1-Chevalier\n2-Sorcier\n\nReponse: "))
