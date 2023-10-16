@@ -12,4 +12,6 @@ dice.lancer(2, 6)
 enemy.choose(player.stat_hp)
 player.stat_hp = 
 
+enemy.choose()
+
 dice.lancer(2, 6)
