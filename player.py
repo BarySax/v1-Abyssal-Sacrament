@@ -8,7 +8,7 @@ class Player:
     self.inventory_weapon = ["Rien"]
     self.inventory_armor = ["Rien"]
     self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))
-    self.race = int(input("A quel peuple appartenez-vous:\n1-Sans dessein\n2-Religieux\n3-Noble\n\nReponse: "))
+    self.race = int(input("A quel categorie appartenez-vous:\n1-Sans dessein\n2-Religieux\n3-Noble\n\nReponse: "))
     self.p_class = int(input("Quel classe voulez etre:\n1-Chevalier\n2-Inquisiteur\n\nReponse: "))
     print(self.p_class)
     if self.p_class == 1:
@@ -19,7 +19,7 @@ class Player:
       self.p_class = "Inquisiteur"
       self.inventory_weapon.append("Serment de vérité")
       self.inventory_armor.append("Habit d'inquisiteur")
-      
+
     if self.race == 1:
       self.race = "Sans dessein"
       self.stat_faith= 10
@@ -38,12 +38,9 @@ class Player:
       self.stat_strenght = 15
       self.stat_speed = 2
       self.stat_hp = 120
-    add_faith = dice.lancer(1,10)
-    add_strenght = dice.lancer(1,10)
-    add_hp = dice.lancer(1,20)
-    self.stat_faith += add_faith
-    self.stat_strenght += add_strenght
-    self.stat_hp += add_hp
+    self.stat_faith += dice.lancer(1,10)
+    self.stat_strenght += dice.lancer(1,10)
+    self.stat_hp += dice.lancer(1,10)
     self.stat_speed += dice.lancer(1,10)
     Weapon("str",1,0,0)
     Armor(0,0,0)
