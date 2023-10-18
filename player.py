@@ -38,10 +38,12 @@ class Player:
       self.stat_strenght = 15
       self.stat_speed = 2
       self.stat_hp = 120
+    self.xp = 500
     self.stat_faith += dice.lancer(1,10)
     self.stat_strenght += dice.lancer(1,10)
     self.stat_hp += dice.lancer(1,10)
     self.stat_speed += dice.lancer(1,10)
+    self.max_hp = self.stat_hp
     Weapon("str",1,0,0)
     Armor(0,0,0)
     print("Vous avez:\n" + str(self.stat_faith) + " point de foi\n" + 
