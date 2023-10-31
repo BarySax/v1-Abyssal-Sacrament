@@ -5,6 +5,9 @@ dice = Dice()
 class Player:
   def __init__(self):
     self.inventory = []
+
+  def create_player(self):
+    self.inventory = []
     self.inventory_weapon = ["Rien"]
     self.inventory_armor = ["Rien"]
     self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))

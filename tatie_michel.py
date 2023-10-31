@@ -1,3 +1,5 @@
+import random
+
 class Tatie_michel:
     def __init__(self):
         self.hp = 100
@@ -5,3 +7,6 @@ class Tatie_michel:
         self.speed = 4
         self.fire = False
         self.flying = True
+    
+    def attaque(self):
+        return random.randint(1,1)

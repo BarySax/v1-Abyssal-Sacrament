@@ -1,5 +1,5 @@
 from dice import Dice
-fromfrom dice import Dice
+from dice import Dice
 from player import Player
 
 #initialization des classe
@@ -56,4 +56,6 @@ def level_up():
         else:
           print("Vous navez pas assez")
           break
+
+
 level_up()

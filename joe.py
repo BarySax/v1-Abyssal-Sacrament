@@ -1,3 +1,4 @@
+import random
 
 class Joe:
     def __init__(self):
@@ -6,3 +7,6 @@ class Joe:
         self.speed = 4
         self.fire = False
         self.flying = False
+
+    def attaque(self):
+        return random.randint(1,1)
