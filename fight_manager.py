@@ -50,16 +50,16 @@ class FightManager:
                     print("lenemy attaque -"+self.enemy.strenght+"hp")
 
                 else:
-                    self.distBetweenCharac -= 1
+                    self.distBetweenCharac -= self.enemy.speed
                     print("lenemy avance")
 
         #ennemy recule
         elif attaque == 2:
-            self.distBetweenCharac += 1
+            self.distBetweenCharac += self.enemy.speed
 
         #lenemy avance
         elif attaque == 3:
-            self.distBetweenCharac -= 1
+            self.distBetweenCharac -= self.enemy.speed
 
     def tourPlayer(self):
         self.player.attaque()
