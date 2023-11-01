@@ -30,7 +30,7 @@ class FightManager:
         self.player = Player()
 
     def printDist(self):
-        print("P", self.distBetweenCharac + "m", "E")
+        print("P,", str(self.distBetweenCharac) + "m", ", E")
         
     #attaque de lenemy
     def tourEnemy(self):
