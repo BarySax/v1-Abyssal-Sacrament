@@ -1,7 +1,7 @@
 from player import Player
-from tatie_michel import Tatie_michel
-from joe import Joe
-from bob import Bob
+from flyer import Flyer
+from runner import Runner
+from launcher import Launcher
 import random
 
 
@@ -19,13 +19,13 @@ class FightManager:
 
         #choix ennemy
         if chance == 0:
-            self.enemy = Joe()
+            self.enemy = Runner()
         
         elif chance == 1:
-            self.enemy = Bob()
+            self.enemy = Launcher()
         
         elif chance == 3:
-            self.enemy =  Tatie_michel()
+            self.enemy =  Flyer()
         
         self.player = Player()
 
