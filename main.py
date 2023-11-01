@@ -11,6 +11,8 @@ dice.lancer(2, 6)
 fightManager = FightManager()
 
 
+
+
 def level_up():
   if player.p_class == "Chevalier":
     choix = int(input("Devant vous ce trouve la statue de Krilum, prophete de la guerre\nQue voulez vous faire:\n1-Vous baissez et honorez votre serment\n2-Partir\n\nReponse:"))
@@ -68,4 +70,9 @@ print("tu te promene dans la foret et tu vois au loin un ennemi")
 fightManager.printDist()
 fightManager.tourEnemy()
 
+
+
+fightManager.fight()
+
+level_up()
 

@@ -9,4 +9,4 @@ class Tatie_michel:
         self.flying = True
     
     def attaque(self):
-        return random.randint(1,1)
+        return random.randint(1,3)

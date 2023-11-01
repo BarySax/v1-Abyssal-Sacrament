@@ -9,4 +9,4 @@ class Bob:
         self.flying = False
     
     def attaque(self):
-        return random.randint(1,1)
+        return random.randint(1,3)
