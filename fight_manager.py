@@ -62,5 +62,38 @@ class FightManager:
             self.distBetweenCharac -= self.enemy.speed
 
     def tourPlayer(self):
-        self.player.attaque()
+        choix = self.player.attaque()
+        if choix == 1:
+            if self.enemy.flying:
+                if self.player.inventory_weapon == "Serment de vérité":
+                    self.enemy.stat_hp -= self.player.stat_strenght
+                    print("Vous attaquez -"+self.player.stat_strenght+"hp")
+                else:
+                    print("vou navez pas d'arme approprier pour un enemie volant")
+            
+            else:
+                if self.player.inventory_weapon == "Épée":
+                    if self.distBetweenCharac <= 3:
+                        self.enemy.stat_hp -= self.player.stat_strenght
+                        print("Vous attaquez -"+self.player.stat_strenght+"hp")
+                    else :
+                        print("vous etes trop loin")
+                        print("vous avancez")
+                        self.distBetweenCharac -= self.player.speed
 
+                else:
+                    print("vou navez pas d'arme approprier")
+
+        elif choix == 3:
+            print("vous reculez")
+            self.distBetweenCharac += self.player.speed
+
+        elif choix == 4:
+            print("vous avancez")
+            self.distBetweenCharac -= self.player.speed
+
+    def fight(self):
+        while self.player.stat_hp > 0 and self.enemy.stat_hp > 0:
+            self.printDist()
+            self.tourEnemy()
+            self.tourPlayer()

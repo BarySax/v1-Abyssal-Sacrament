@@ -97,4 +97,10 @@ class Player:
           break
         else:
           print("Ce choix n'est pas disponible")
-    use_inventory(self)
+          use_inventory(self)
+
+  def attaque(self):
+    self.choix = int(input("Que voulez vous faire:\n1-Attaquer\n2-Utiliser un objet (pas encore disponible)\n3-avancer\n4-reculer\n5-fuir\n\nReponse: "))
+    return self.choix
+
+
