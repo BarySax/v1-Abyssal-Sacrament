@@ -1,6 +1,6 @@
 import random
 
-class Joe:
+class Runner:
     def __init__(self):
         self.hp = 100
         self.strenght = 10
