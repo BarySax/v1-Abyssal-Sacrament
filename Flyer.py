@@ -1,6 +1,6 @@
 import random
 
-class Tatie_michel:
+class Flyer:
     def __init__(self):
         self.hp = 100
         self.strenght = 20
