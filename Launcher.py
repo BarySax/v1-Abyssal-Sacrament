@@ -1,6 +1,6 @@
 import random
 
-class Bob:
+class Launcher:
     def __init__(self):
         self.hp = 100
         self.strenght = 10
