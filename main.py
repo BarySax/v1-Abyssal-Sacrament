@@ -68,10 +68,6 @@ player.create_player()
 
 print("tu te promene dans la foret et tu vois au loin un ennemi")
 fightManager.printDist()
-fightManager.tourEnemy()
-
-
-
 fightManager.fight()
 
 level_up()

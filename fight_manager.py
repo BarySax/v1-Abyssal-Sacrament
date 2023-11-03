@@ -15,6 +15,7 @@ class FightManager:
         
         #variable de la classe
         self.distBetweenCharac = 5
+        self.player = Player()
         
 
         #choix ennemy
