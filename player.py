@@ -60,7 +60,7 @@ class Player:
       str(self.stat_hp) + " point de vie\n" + 
       str(self.stat_speed) + " de vitesse de deplacement")
 
-    return self.stat_hp
+    return self.stat_hp, self.stat_strenght, self.stat_speed, self.inventory_weapon
     
   def use_inventory(self):
     choix = int(input("Que voulez vous faire:\n1-Changer d'armure\n2-Changer d'arme\n3-Quitter\n\nReponse: "))
@@ -105,8 +105,8 @@ class Player:
     else:
       print("Ce choix n'est pas disponible")
       self.use_inventory()
-        
-  def attaque(self):
-      self.choix = int(input("Que voulez vous faire:\n1-Attaquer\n2-Utiliser un objet (pas encore disponible)\n3-avancer\n4-reculer\n5-fuir\n\nReponse: "))
-      return self.choix
+    
+    
+
+
 

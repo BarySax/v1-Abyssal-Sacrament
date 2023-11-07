@@ -2,14 +2,17 @@ from dice import Dice
 from dice import Dice
 from player import Player
 from fight_manager import FightManager
+import sys
 
 #initialization des classe
 
 dice = Dice()
 player = Player()
 dice.lancer(2, 6)
-fightManager = FightManager()
 
+
+#variable du programme
+win = False
 
 
 
@@ -64,11 +67,18 @@ def level_up():
           break
 
 print ("Bienvenue dans le monde de la guerre tu vas choisir ta classe et ton nom")
-player.create_player()
+stat_player = player.create_player()
 
 print("tu te promene dans la foret et tu vois au loin un ennemi")
+fightManager = FightManager(stat_player[0], stat_player[1], stat_player[2], stat_player[3])
 fightManager.printDist()
-fightManager.fight()
+print("player.hp = " + str(stat_player[0]))
+win = fightManager.fight()
 
-level_up()
+if win:
+  level_up()
+
+else:
+  print("Vous etes mort")
+  sys.exit(0)
 
