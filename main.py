@@ -70,7 +70,7 @@ print ("Bienvenue dans le monde de la guerre tu vas choisir ta classe et ton nom
 stat_player = player.create_player()
 
 print("tu te promene dans la foret et tu vois au loin un ennemi")
-fightManager = FightManager(stat_player[0], stat_player[1], stat_player[2], stat_player[3])
+fightManager = FightManager(stat_player[0], stat_player[1], stat_player[2], "Épée")
 fightManager.printDist()
 print("player.hp = " + str(stat_player[0]))
 win = fightManager.fight()
