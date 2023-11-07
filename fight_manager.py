@@ -11,6 +11,7 @@ class FightManager:
     def __init__(self, player_hp, player_strenght, player_speed, player_inventory_weapon):
 
         #variable de la fonction
+
         chance = random.randint(0,2)
         
         #variable de la classe
@@ -22,20 +23,22 @@ class FightManager:
         
         
 
+
         #choix ennemy
         if chance == 0:
             self.enemy = Joe()
-        
+
         elif chance == 1:
             self.enemy = Bob()
+
         
         elif chance == 2:
             self.enemy =  Tatie_michel()
         
 
     def printDist(self):
-        print("P,", str(self.distBetweenCharac) + "m", ", E")
-        
+        print("Votre distance avec l'ennemi est de:\n" +str(self.distBetweenCharac) + " metre")
+
     #attaque de lenemy
     def tourEnemy(self):
         #variable de fonction
@@ -74,7 +77,7 @@ class FightManager:
                     print("Vous attaquez -"+self.player.stat_strenght+"hp")
                 else:
                     print("vou navez pas d'arme approprier pour un enemie volant")
-            
+
             else:
                 if self.player_inventory_weapon == "Épée":
                     if self.distBetweenCharac <= 3:
@@ -109,3 +112,4 @@ class FightManager:
         else:
             return False
         
+
