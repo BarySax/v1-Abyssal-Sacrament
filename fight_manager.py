@@ -1,115 +1,84 @@
+from dice import Dice
+from dice import Dice
 from player import Player
-from tatie_michel import Tatie_michel
-from joe import Joe
-from bob import Bob
-import random
-
+from fight_manager import FightManager
+import sys
 
 #initialization des classe
 
-class FightManager:
-    def __init__(self, player_hp, player_strenght, player_speed, player_inventory_weapon):
-
-        #variable de la fonction
-
-        chance = random.randint(0,2)
-        
-        #variable de la classe
-        self.distBetweenCharac = 5
-        self.player_hp = player_hp
-        self.player_strenght = player_strenght
-        self.player_speed = player_speed
-        self.player_inventory_weapon = player_inventory_weapon
-        
-        
+dice = Dice()
+player = Player()
+dice.lancer(2, 6)
 
 
-        #choix ennemy
-        if chance == 0:
-            self.enemy = Joe()
+#variable du programme
+win = False
 
-        elif chance == 1:
-            self.enemy = Bob()
 
-        
-        elif chance == 2:
-            self.enemy =  Tatie_michel()
 
-        print("tu combat", chance)
-
-    def printDist(self):
-        print("Votre distance avec l'ennemi est de:\n" +str(self.distBetweenCharac) + " metre")
-        print("vos hp", self.player_hp)
-        print("hp de lenemy", self.enemy.hp)
-
-    #attaque de lenemy
-    def tourEnemy(self):
-        #variable de fonction
-        attaque = self.enemy.attaque()
-        
-
-        #attaque de lenemy
-        if attaque == 1:
-            #attaque de bob
-            if self.enemy.fire:
-                self.player_hp -= self.enemy.strenght
-                print("lenemy attaque -" + str(self.enemy.strenght) + "hp")
-
-            else:
-                if self.distBetweenCharac <= 3:
-                    self.player_hp -= self.enemy.strenght
-                    print("lenemy attaque -"+ str(self.enemy.strenght)+"hp")
-
-                else:
-                    self.distBetweenCharac -= self.enemy.speed
-                    print("lenemy avance")
-
-        #ennemy recule
-        elif attaque == 2:
-            self.distBetweenCharac += self.enemy.speed
-            print("leney recule")
-
-        #lenemy avance
-        elif attaque == 3:
-            self.distBetweenCharac -= self.enemy.speed
-            print("lenemy avance")
-
-    def tourPlayer(self):
-        self.choix = int(input("Que voulez vous faire:\n1-Attaquer\n2-Utiliser un objet (pas encore disponible)\n3-avancer\n4-reculer\n5-fuir\n\nReponse: "))
-        if self.choix == 1:
-            
-            if self.player_inventory_weapon == "Épée":
-                if self.distBetweenCharac <= 3:
-                    self.enemy.hp -= self.player_strenght
-                    print("Vous attaquez -"+str(self.player_strenght)+"hp")
-                else :
-                    print("vous etes trop loin")
-                    print("vous avancez")
-                    self.distBetweenCharac -= self.player_speed
-
-            else:
-                print("vou navez pas d'arme approprier")
-
-        elif self.choix == 3:
-            print("vous avancez")
-            if self.distBetweenCharac <= 0:
-                self.distBetweenCharac -= self.player_speed
-
-        elif self.choix == 4:
-            print("vous reculez")
-            self.distBetweenCharac += self.player_speed
-
-    def fight(self):
-        print("vous avez "+str(self.player_hp)+"hp")
-        while self.player_hp > 0 and self.enemy.hp > 0:
-            self.printDist()
-            self.tourEnemy()
-            self.tourPlayer()
-        
-        if self.player_hp > 0:
-            return True
-
+def level_up():
+  if player.p_class == "Chevalier":
+    choix = int(input("Devant vous ce trouve la statue de Krilum, prophete de la guerre\nQue voulez vous faire:\n1-Vous baissez et honorez votre serment\n2-Partir\n\nReponse:"))
+    if choix == 1:
+      print("Vous fermez les yeux et honorez votre serment")
+      while player.xp >= 0:
+        if player.xp - 100 >= 0:
+          choix = int(input("Vous avez " + str(player.xp) + " point de determination\nQue voulez vous faire:\n1-Augmenter votre foi\n2-Augmenter votre force\n3-Augmenter vos point de vie\n4-Vous lever\n\nReponse: "))
+          if choix == 1:
+            player.stat_faith += 5
+            print("Votre lien avec l'illuminé a augmenter, elle est de " + str(player.stat_faith))
+            player.xp -= 100
+          elif choix == 2:
+            player.stat_strenght += 5
+            print("Votre forcde a augmenter, elle est de " + str(player.stat_strenght))
+            player.xp -= 100
+          elif choix == 3:
+            player.max_hp += 5
+            print("Votre santé maximal a augmenter, elle est de " + str(player.max_hp))
+            player.xp -= 100
+          elif choix == 4:
+            break
         else:
-            return False
-        
+          print("Vous navez pas assez")
+          break
+  elif player.p_class == "Inquisiteur":
+    choix = int(input("Devant vous ce trouve la statue de l'eveillememt, dieu incontestable\nQue voulez vous faire:\n1-Vous baissez et suppliez votre divinite\n2-Partir\n\nReponse:"))
+    if choix == 1:
+      print("Vous fermez les yeux et honorez votre serment")
+      while player.xp >= 0:
+        if player.xp - 100 >= 0:
+          choix = int(input("Vous avez " + str(player.xp) + " point de determination\nQue voulez vous faire:\n1-Augmenter votre foi\n2-Augmenter votre force\n3-Augmenter vos point de vie\n4-Vous lever\n\nReponse: "))
+          if choix == 1:
+            player.stat_faith += 5
+            print("Votre lien avec l'illuminé a augmenter, elle est de " + str(player.stat_faith))
+            player.xp -= 100
+          elif choix == 2:
+            player.stat_strenght += 5
+            print("Votre forcde a augmenter, elle est de " + str(player.stat_strenght))
+            player.xp -= 100
+          elif choix == 3:
+            player.max_hp += 5
+            print("Votre santé maximal a augmenter, elle est de " + str(player.max_hp))
+            player.xp -= 100
+          elif choix == 4:
+            break
+        else:
+          print("Vous navez pas assez")
+          break
+
+print ("Bienvenue dans le monde de la guerre tu vas choisir ta classe et ton nom")
+stat_player = player.create_player()
+
+print("tu te promene dans la foret et tu vois au loin un ennemi")
+fightManager = FightManager(stat_player[0], stat_player[1], stat_player[2], "Épée")
+fightManager.printDist()
+print("player.hp = " + str(stat_player[0]))
+win = fightManager.fight()
+
+if win:
+  level_up()
+
+else:
+  print("Vous etes mort")
+  sys.exit(0)
 
