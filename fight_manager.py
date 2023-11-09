@@ -8,7 +8,7 @@ import random
 #initialization des classe
 
 class FightManager:
-    def __init__(self, player_hp, player_strenght, player_speed, player_inventory_weapon):
+    def __init__(self, player_hp, player_strenght, player_speed, player_inventory_weapon, player_inventory):
 
         #variable de la fonction
 
@@ -20,6 +20,7 @@ class FightManager:
         self.player_strenght = player_strenght
         self.player_speed = player_speed
         self.player_inventory_weapon = player_inventory_weapon
+        self.player_inventory = player_inventory
         
         
 
@@ -102,9 +103,9 @@ class FightManager:
     def fight(self):
         print("vous avez "+str(self.player_hp)+"hp")
         while self.player_hp > 0 and self.enemy.hp > 0:
-            self.printDist()
             self.tourEnemy()
             self.tourPlayer()
+            self.printDist()
         
         if self.player_hp > 0:
             return True

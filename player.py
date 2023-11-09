@@ -12,8 +12,8 @@ class Player:
 
 
   def create_player(self):
-    self.inventory = []
-    self.inventory_weapon = ["Rien"]
+    self.inventory = ["Potion"]
+    self.inventory_weapon = ["Rien", "Dague"]
     self.inventory_armor = ["Rien"]
     self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))
     self.race = int(input("A quel categorie appartenez-vous:\n1-Sans dessein\n2-Religieux\n3-Noble\n\nReponse: "))
@@ -60,7 +60,7 @@ class Player:
       str(self.stat_hp) + " point de vie\n" + 
       str(self.stat_speed) + " de vitesse de deplacement")
 
-    return self.stat_hp, self.stat_strenght, self.stat_speed, self.inventory_weapon
+    return self.stat_hp, self.stat_strenght, self.stat_speed, self.inventory_weapon, self.inventory
     
   def use_inventory(self):
     choix = int(input("Que voulez vous faire:\n1-Changer d'armure\n2-Changer d'arme\n3-Quitter\n\nReponse: "))
