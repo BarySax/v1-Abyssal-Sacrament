@@ -21,14 +21,21 @@ class Player:
     print(" dP__Yb  88  Yb   8P   o. Y8b o. Y8b  dP__Yb  88  .o     o. Y8b  dP__Yb  Yb      88 Yb   dP__Yb  88YbdP88 88     88 Y88   88   ")
     print("dP    Yb 88oodP  dP    8bodP' 8bodP' dP    Yb 88ood8     8bodP  dP    Yb  YboodP 88  Yb dP    Yb 88 YY 88 888888 88  Y8   88   \n\n\n")
 
-    print("vous dormez paisiblement quand tout a coups vous vous sentez souleve de votre lit et enmmenez dans les airs.")
+    print("Comme tout les soir, vous rejoigner votre lit, mais etrangement, une sensation de douleur sempare de votre corps, vous avez limpression que des main ardente vous aggrippe")
     time.sleep(2)
-    print("une lumiere blanche vous eblouis et vous aveugle presque. une vois puissante commence a vous parlez.")
+    print("Votre corps ce fauxant soutenir est lever dans le ciel")
     time.sleep(1.5)
-    print("vouS pensez la reconnaitre, car c'est la voie de votre dieux. De plus vous voyez son visage.")
+    print("Puis tous dun copu vous etes projeter dans une obscuriter totale, vous voyez mainteant les main de feu vous aggriper")
     time.sleep(1.5)
-    print("il vous dit que vous avez des tache a effectuer et que vous devez les replir le plus vite possible pour reparer vos crime et avoir une chance de finir")
-    print("dans les ABYSSE SACREMENTAL\n\n\n\n")
+    print("Les main ce reffroidise puis seffrite et tombe en poussiere")
+    time.sleep(1.5)
+    print("Devant vous une lumiere apparait, une lumiere dans les tenebres, une oeil yant sois meme a linterieur, le processus repliquer a l'infini")
+    time.sleep(1.5)
+    print("Vous savez quesque ces, ces le dieu absolue, de linfinie, leveillement")
+    time.sleep(1.5)
+    print("Du centre de sa sainte pupille, un sang mate sechappe et enroule votre corps vous retrouver entierrement dans une marre de sang")
+    time.sleep(1.5)
+    print("Une voix surgie dans votre tete, un immense honneur vous ait accorder: « Tu est le saint choisi, tu doit purger la vermines de ce monde, repond a la prophetie, et tu pourras me rejoindre dans les ABYSSE SACREMENTAL\n\n\n\n")
     time.sleep(2)
 
     #la chute du personage
@@ -78,14 +85,14 @@ class Player:
     self.max_hp = self.stat_hp
     Weapon("str",1,0,0)
     Armor(0,0,0)
-    
+
     print("Vous avez:\n" + str(self.stat_faith) + " point de foi\n" + 
       str(self.stat_strenght) + " point de force\n" + 
       str(self.stat_hp) + " point de vie\n" + 
       str(self.stat_speed) + " de vitesse de deplacement")
-    
+
     def use_inventory(self):
-  
+
       choix = int(input("Que voulez vous faire:\n1-Changer d'armure\n2-Changer d'arme\n3-Quitter\n\nReponse: "))
       if choix == 1:
         print("Vous avez:\n" + str(self.inventory_armor))
