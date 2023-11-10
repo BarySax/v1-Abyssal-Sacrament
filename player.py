@@ -1,15 +1,44 @@
 from dice import Dice
 from weapon import Weapon
 from armor import Armor
+import time
+
 dice = Dice()
 class Player:
   def __init__(self):
     self.inventory = []
 
   def create_player(self):
+
     self.inventory = []
     self.inventory_weapon = ["Rien"]
     self.inventory_armor = ["Rien"]
+
+    #aficher le debut de lhistoir
+    print("bienvenue dans:")
+    print("   db    8888Yb Yb  dP .dPY8 .dPY8      db    88         .dP-Y8    db     dP--b8 88--Yb    db    8b    d8 888888 88b 88 888888 ")
+    print("  dPYb   88__dP  YbdP   Ybo.   Ybo.    dPYb   88          Ybo.    dPYb   dP      88__dP   dPYb   88b  d88 88__   88Yb88   88   ")
+    print(" dP__Yb  88  Yb   8P   o. Y8b o. Y8b  dP__Yb  88  .o     o. Y8b  dP__Yb  Yb      88 Yb   dP__Yb  88YbdP88 88     88 Y88   88   ")
+    print("dP    Yb 88oodP  dP    8bodP' 8bodP' dP    Yb 88ood8     8bodP  dP    Yb  YboodP 88  Yb dP    Yb 88 YY 88 888888 88  Y8   88   \n\n\n")
+
+    print("vous dormez paisiblement quand tout a coups vous vous sentez souleve de votre lit et enmmenez dans les airs.")
+    time.sleep(2)
+    print("une lumiere blanche vous eblouis et vous aveugle presque. une vois puissante commence a vous parlez.")
+    time.sleep(1.5)
+    print("vouS pensez la reconnaitre, car c'est la voie de votre dieux. De plus vous voyez son visage.")
+    time.sleep(1.5)
+    print("il vous dit que vous avez des tache a effectuer et que vous devez les replir le plus vite possible pour reparer vos crime et avoir une chance de finir")
+    print("dans les ABYSSE SACREMENTAL\n\n\n\n")
+    time.sleep(2)
+
+    #la chute du personage
+    for i in range(10):
+      print("vous tombez et tous devien sombre")
+      time.sleep(1)
+
+    print("vous vouz reveillez dans votre lit en sueur apres une longue nuit de someil dificile.")
+    print("durant cette nuit vous avez eu une elumination.\n\n")
+
     self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))
     self.race = int(input("A quel categorie appartenez-vous:\n1-Sans dessein\n2-Religieux\n3-Noble\n\nReponse: "))
     self.p_class = int(input("Quel classe voulez etre:\n1-Chevalier\n2-Inquisiteur\n\nReponse: "))
