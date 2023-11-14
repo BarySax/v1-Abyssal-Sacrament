@@ -15,36 +15,36 @@ class Player:
     self.inventory_armor = ["Rien"]
 
     #aficher le debut de lhistoir
-    print("bienvenue dans:")
     print("   db    8888Yb Yb  dP .dPY8 .dPY8      db    88         .dP-Y8    db     dP--b8 88--Yb    db    8b    d8 888888 88b 88 888888 ")
     print("  dPYb   88__dP  YbdP   Ybo.   Ybo.    dPYb   88          Ybo.    dPYb   dP      88__dP   dPYb   88b  d88 88__   88Yb88   88   ")
     print(" dP__Yb  88  Yb   8P   o. Y8b o. Y8b  dP__Yb  88  .o     o. Y8b  dP__Yb  Yb      88 Yb   dP__Yb  88YbdP88 88     88 Y88   88   ")
     print("dP    Yb 88oodP  dP    8bodP' 8bodP' dP    Yb 88ood8     8bodP  dP    Yb  YboodP 88  Yb dP    Yb 88 YY 88 888888 88  Y8   88   \n\n\n")
-
-    print("Comme tout les soir, vous rejoigner votre lit, mais etrangement, une sensation de douleur sempare de votre corps, vous avez limpression que des main ardente vous aggrippe")
+    while True:
+      start_game = int(input("1-Commencer   2-Charger\n3-Quitter\n\nReponse: "))
+      if start_game == 1:
+        break
+    print("Comme tout les soir, vous rejoigner votre lit, mais etrangement, une sensation de douleur s'empare de votre corps, vous avez l'impression que des main ardente vous aggrippe")
     time.sleep(2)
-    print("Votre corps ce fauxant soutenir est lever dans le ciel")
+    print("Votre corps se faisant soutenir est tirer sous la terre")
     time.sleep(1.5)
-    print("Puis tous dun copu vous etes projeter dans une obscuriter totale, vous voyez mainteant les main de feu vous aggriper")
+    print("Puis tous d'un coup vous etes projeter dans une obscuriter total, vous voyez mainteant des main de feu vous aggriper")
     time.sleep(1.5)
-    print("Les main ce reffroidise puis seffrite et tombe en poussiere")
+    print("Les main ce reffroidice puis s'effrite et tombe en poussiere")
     time.sleep(1.5)
-    print("Devant vous une lumiere apparait, une lumiere dans les tenebres, une oeil yant sois meme a linterieur, le processus repliquer a l'infini")
+    print("Devant vous une lumiere apparait, une lumiere dans les tenebres, une oeil ayant sois meme a l'interieur, le processus repliquer a l'infini")
     time.sleep(1.5)
-    print("Vous savez quesque ces, ces le dieu absolue, de linfinie, leveillement")
+    print("Vous s'avez ce que ces, cette divine apparition est le dieu absolue, de l'infinie, l'eveillement")
     time.sleep(1.5)
-    print("Du centre de sa sainte pupille, un sang mate sechappe et enroule votre corps vous retrouver entierrement dans une marre de sang")
+    print("Du centre de sa sainte pupille, un sang mate s'echappe et enroule votre corps, vous retrouver entierement dans une marre de sang")
     time.sleep(1.5)
-    print("Une voix surgie dans votre tete, un immense honneur vous ait accorder: « Tu est le saint choisi, tu doit purger la vermines de ce monde, repond a la prophetie, et tu pourras me rejoindre dans les ABYSSE SACREMENTAL\n\n\n\n")
+    print("Une voix surgie dans votre tete, un immense honneur vous est accorder: « Tu est le saint choisi, tu dois purger la vermines de ce monde, repond a la prophetie, et tu pourras me rejoindre dans les ABYSSE SACREMENTAL\n\n\n\n")
     time.sleep(2)
 
-    #la chute du personage
-    for i in range(10):
-      print("vous tombez et tous devien sombre")
-      time.sleep(1)
-
-    print("vous vouz reveillez dans votre lit en sueur apres une longue nuit de someil dificile.")
-    print("durant cette nuit vous avez eu une elumination.\n\n")
+    print("Vous vouz reveillez dans votre lit en sueur apres une longue nuit de sommeil dificile.")
+    time.sleep(1.5)
+    print("Le choc etais si intense que vous ne savez plus qui vous etes")
+    time.sleep(1.5)
+    print("Vous vous rapprochez d'un miroir, vous rassembler tous vos souvenirs, qui etes vous")
 
     self.name = str(input("Comment vous nommez-vous?\n\nReponse: "))
     self.race = int(input("A quel categorie appartenez-vous:\n1-Sans dessein\n2-Religieux\n3-Noble\n\nReponse: "))
