@@ -1,15 +1,18 @@
 # ABYSSAL SACREMENT 
 
-this his our second rpg game this year. for this one we decide to change genre and go whit a dark fantasy game with lot of religion in it.
+We decide me and my friend to make an role playing game, inspired by DnD and Warhammer, we already did one so for this one we decide to change genre and go with a dark fantasy with a lot of religion in it.
 
 
 
 # Files
 
-just go on Player branch and run the **main.py** 
+Just go on Player branch and run the **main.py** 
 
 # Publication
 
-if you are to contribute chose your branch then creat a new on with your name in it
+If you are to contribute chose your branch then create a new file, with your name in it
 
-> if you want to add your code to the branch just creat a pull request an put me **steiyve** in the 
+> If you want to add your code to the branch just create a pull request an put me **steiyve** in the 
+
+ps: Everything is in french ¯\_(ツ)_/¯
+>except the variable, if its not an language that you understand, you can still try to help us
