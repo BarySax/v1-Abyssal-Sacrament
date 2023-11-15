@@ -15,3 +15,4 @@ If you are to contribute chose your branch then create a new file, with your nam
 > If you want to add your code to the branch just create a pull request an put me **steiyve** in the 
 
 ps: Everything is in french ¯\_(ツ)_/¯
+>except the variable, if its not an language that you understand, you still try to help us
