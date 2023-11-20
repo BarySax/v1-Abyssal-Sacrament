@@ -12,7 +12,8 @@ Just go on Player branch and run the **main.py**
 
 If you are to contribute chose your branch then create a new file, with your name in it
 
-> If you want to add your code to the branch just create a pull request an put me **steiyve** in the 
+> If you want to add your code to the branch just create a pull request an put me **steiyve** in the
+> reviewer
 
 ps: Everything is in french ¯\_(ツ)_/¯
 >except 90% of the variable, if its not an language that you understand, you can still try to help us
