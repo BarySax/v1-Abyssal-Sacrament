@@ -75,29 +75,40 @@ class FightManager:
             print("lenemy avance")
 
     def tourPlayer(self):
-        self.choix = int(input("Que voulez vous faire:\n1-Attaquer\n2-Utiliser un objet (pas encore disponible)\n3-avancer\n4-reculer\n5-fuir\n\nReponse: "))
-        if self.choix == 1:
-            
-            if self.player_inventory_weapon == "Épée":
-                if self.distBetweenCharac <= 3:
-                    self.enemy.hp -= self.player_strenght
-                    print("Vous attaquez -"+str(self.player_strenght)+"hp")
-                else :
-                    print("vous etes trop loin")
-                    print("vous avancez")
+        while True:
+            self.choix = int(input("Que voulez vous faire:\n1-Attaquer      2-Utiliser un objet\n3-Vous deplacer\n\nReponse: "))
+            if self.choix == 1:
+                
+                if self.player_inventory_weapon == "Épée":
+                    self.choix = int(input("Quelle type d'attaque voulez vous faire:\n1-Attaque precise     2-Attaque laterale\n\nReponse: "))
+                    type_attack = self.choix
+                    self.choix = int("Quelle direction:\n1-Vers le haut     2-Vers le bas\n3-En face de vous\n\nReponse: ")
+                    dir_attack = self.choix
+                    if type_attack == 1:
+                        if dir_attack == 1:
+                            print(1.1)
+                        elif dir_attack == 2:
+                            print(1.2)
+                        elif dir_attack == 3:
+                            print(1.3)
+                    elif type_attack == 2:
+                        if dir_attack == 1:
+                            print(2.1)
+                        elif dir_attack == 2:
+                            print(2.2)
+                        elif dir_attack == 3:
+                            print(2.3)
+                else:
+                    print("vou navez pas d'arme approprier")
+
+            elif self.choix == 3:
+                print("vous avancez")
+                if self.distBetweenCharac <= 0:
                     self.distBetweenCharac -= self.player_speed
 
-            else:
-                print("vou navez pas d'arme approprier")
-
-        elif self.choix == 3:
-            print("vous avancez")
-            if self.distBetweenCharac <= 0:
-                self.distBetweenCharac -= self.player_speed
-
-        elif self.choix == 4:
-            print("vous reculez")
-            self.distBetweenCharac += self.player_speed
+            elif self.choix == 4:
+                print("vous reculez")
+                self.distBetweenCharac += self.player_speed
 
     def fight(self):
         print("vous avez "+str(self.player_hp)+"hp")
