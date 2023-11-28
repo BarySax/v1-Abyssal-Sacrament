@@ -8,7 +8,6 @@ from fight_manager import FightManager
 dice = Dice()
 player = Player()
 dice.lancer(2, 6)
-fightManager = FightManager()
 
 def main_menu():
   #aficher le debut de lhistoir
@@ -20,6 +19,7 @@ def main_menu():
       start_game = int(input("1-Commencer   2-Charger\n3-Quitter\n\nReponse: "))
       if start_game == 1:
         break
+
 def level_up():
   choix = int(input("Devant vous ce trouve la statue de l'eveillememt, dieu incontestable\nQue voulez vous faire:\n1-Vous baissez et suppliez votre divinite\n2-Partir\n\nReponse:"))
   if choix == 1:
@@ -45,7 +45,6 @@ def level_up():
         print("Vous navez pas assez")
         break
 stat_player = player.create_player()
-
 print("tu te promene dans la foret et tu vois au loin un ennemi")
 fightManager = FightManager(stat_player[0], stat_player[1], stat_player[2], "Épée")
 fightManager.printDist()
