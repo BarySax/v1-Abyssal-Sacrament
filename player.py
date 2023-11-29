@@ -10,7 +10,6 @@ class Player:
     self.inventory = []
 
   def create_player(self):
-
     self.inventory = []
     self.inventory_weapon = ["Rien"]
     self.inventory_armor = ["Rien"]
@@ -82,47 +81,47 @@ class Player:
       str(self.stat_hp) + " point de vie\n" + 
       str(self.stat_speed) + " de vitesse de deplacement")
 
-    def use_inventory(self):
+  def use_inventory(self):
 
-      choix = int(input("Que voulez vous faire:\n1-Changer d'armure\n2-Changer d'arme\n3-Quitter\n\nReponse: "))
-      if choix == 1:
-        print("Vous avez:\n" + str(self.inventory_armor))
-        choix = int(input("Quelle armure voulez vous prendre?\n\nReponse: "))
-        choix -= 1
-        if choix < 0:
-          choix = 0
-        self.use_armor = self.inventory_armor[choix]
-        if self.use_armor == "Rien":
-          Armor(0,0,0)
-          self.armor = Armor(0,0,0)
-        elif self.use_armor == "Armure de fer":
-          Armor(10,0,5)
-          self.armor = Armor(10,0,5)
-        elif self.use_armor == "Habit d'inquisiteur":
-          Armor(2,10,0)
-          self.armor = Armor(2,10,0)
-        print("Vous utilisez:\n" + str(self.use_armor)
-          + "\nVotre armure a: " +
-              str(self.armor.str_protection) + " de protection physique, " + str(self.armor.faith_protection) + " de protection magique et " + str(self.armor.weight) + " de poids")
-      elif choix == 2:
-        print("Vous avez:\n" + str(self.inventory_weapon))
-        choix = int(input("Quelle arme voulez vous prendre?\n\nReponse: "))
-        choix -= 1
-        if choix < 0:
-          choix = 0
-        self.use_weapon = self.inventory_weapon[choix]
-        if self.use_weapon == "Rien":
-          Weapon("str",1,0,0)
-          self.weapon = Weapon("str",1,0,0)
-        elif self.use_weapon == "Épée":
-          Weapon("str",5,0,self.stat_strenght)
-          self.weapon = Weapon("str",5,0,self.stat_strenght)
-        elif self.use_weapon == "Serment de vérité":
-          Weapon("int",0,5,0)
-          self.weapon = Weapon("faith",0,5,0)
-        print("Vous utilisez:\n" + str(self.use_weapon)
-          + "\nVotre arme fais: " + str(self.weapon.damage) + " points de dégâts")
+    choix = int(input("Que voulez vous faire:\n1-Changer d'armure\n2-Changer d'arme\n3-Quitter\n\nReponse: "))
+    if choix == 1:
+      print("Vous avez:\n" + str(self.inventory_armor))
+      choix = int(input("Quelle armure voulez vous prendre?\n\nReponse: "))
+      choix -= 1
+      if choix < 0:
+        choix = 0
+      self.use_armor = self.inventory_armor[choix]
+      if self.use_armor == "Rien":
+        Armor(0,0,0)
+        self.armor = Armor(0,0,0)
+      elif self.use_armor == "Armure de fer":
+        Armor(10,0,5)
+        self.armor = Armor(10,0,5)
+      elif self.use_armor == "Habit d'inquisiteur":
+        Armor(2,10,0)
+        self.armor = Armor(2,10,0)
+      print("Vous utilisez:\n" + str(self.use_armor)
+        + "\nVotre armure a: " +
+            str(self.armor.str_protection) + " de protection physique, " + str(self.armor.faith_protection) + " de protection magique et " + str(self.armor.weight) + " de poids")
+    elif choix == 2:
+      print("Vous avez:\n" + str(self.inventory_weapon))
+      choix = int(input("Quelle arme voulez vous prendre?\n\nReponse: "))
+      choix -= 1
+      if choix < 0:
+        choix = 0
+      self.use_weapon = self.inventory_weapon[choix]
+      if self.use_weapon == "Rien":
+        Weapon("str",1,0,0)
+        self.weapon = Weapon("str",1,0,0)
+      elif self.use_weapon == "Épée":
+        Weapon("str",5,0,self.stat_strenght)
+        self.weapon = Weapon("str",5,0,self.stat_strenght)
+      elif self.use_weapon == "Serment de vérité":
+        Weapon("int",0,5,0)
+        self.weapon = Weapon("faith",0,5,0)
+      print("Vous utilisez:\n" + str(self.use_weapon)
+        + "\nVotre arme fais: " + str(self.weapon.damage) + " points de dégâts")
 
-      else:
-        print("Ce choix n'est pas disponible")
-        use_inventory()
+    else:
+      print("Ce choix n'est pas disponible")
+      self.use_inventory()

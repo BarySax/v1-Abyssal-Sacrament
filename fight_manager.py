@@ -7,7 +7,7 @@ import random
 
 #initialization des classe
 class FightManager:
-    def __init__(self, player_hp, player_strenght, player_faith, player_speed, player_inventory_weapon, player_inventory_armor):
+    def __init__(self, player_hp, player_strenght, player_faith, player_speed, player_inventory_weapon, player_inventory_armor):                         # a ajouter: player_inventory_weapon, player_inventory_armor
 
         #variable de la fonction
 

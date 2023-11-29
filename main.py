@@ -2,6 +2,7 @@ from dice import Dice
 from dice import Dice
 from player import Player
 from fight_manager import FightManager
+import sys
 
 #initialization des classe
 
@@ -44,11 +45,12 @@ def level_up():
       else:
         print("Vous navez pas assez")
         break
-stat_player = player.create_player()
+
+player.create_player()
 print("tu te promene dans la foret et tu vois au loin un ennemi")
-fightManager = FightManager(stat_player[0], stat_player[1], stat_player[2], "Épée")
+fightManager = FightManager(player.stat_hp, player.stat_faith, player.stat_strenght, player.stat_speed, player.inventory_weapon, player.inventory_armor)
 fightManager.printDist()
-print("player.hp = " + str(stat_player[0]))
+print("player.hp = ", player.stat_hp)
 win = fightManager.fight()
 
 if win:
